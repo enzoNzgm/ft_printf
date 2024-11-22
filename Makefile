@@ -6,7 +6,7 @@
 #    By: enzuguem <enzuguem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 15:05:03 by enzuguem          #+#    #+#              #
-#    Updated: 2024/11/22 16:12:42 by enzuguem         ###   ########.fr        #
+#    Updated: 2024/11/22 17:46:37 by enzuguem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,9 @@ test: $(NAME)
 	./main
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) main
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) main
 
 re: fclean all
