@@ -6,7 +6,7 @@
 /*   By: enzuguem <enzuguem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 12:25:12 by enzuguem          #+#    #+#             */
-/*   Updated: 2024/11/22 16:52:31 by enzuguem         ###   ########.fr       */
+/*   Updated: 2024/11/26 11:29:49 by enzuguem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	i = 0;
 	print_length = 0;
+	if (!format)
+		return (0);
 	while (format[i])
 	{
 		if (format[i] == '%')

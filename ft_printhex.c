@@ -6,7 +6,7 @@
 /*   By: enzuguem <enzuguem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:01:45 by enzuguem          #+#    #+#             */
-/*   Updated: 2024/11/22 14:27:41 by enzuguem         ###   ########.fr       */
+/*   Updated: 2024/11/26 11:34:06 by enzuguem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_hex_len(unsigned int num)
 	return (len);
 }
 
-void	ft_put_hex(int num, char format)
+void	ft_put_hex(unsigned int num, char format)
 {
 	if (num >= 16)
 	{

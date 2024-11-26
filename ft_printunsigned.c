@@ -6,14 +6,15 @@
 /*   By: enzuguem <enzuguem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:29:41 by enzuguem          #+#    #+#             */
-/*   Updated: 2024/11/22 16:47:33 by enzuguem         ###   ########.fr       */
+/*   Updated: 2024/11/26 10:56:09 by enzuguem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <unistd.h>
+#include <stdio.h>
 
-int	ft_printunsigned(int n)
+int	ft_printunsigned(unsigned int n)
 {
 	char	*nbr;
 	int		len;
@@ -21,15 +22,9 @@ int	ft_printunsigned(int n)
 	len = 0;
 	if (n >= 0)
 	{
-		nbr = ft_itoa(n);
-		len = ft_strlen(nbr);
-		write(1, nbr, len);
-		free(nbr);
-	}
-	else
-	{
-		n = 4294967295 - n + 1;
-		nbr = ft_itoa(n);
+		nbr = ft_uitoa(n);
+		if (!nbr)
+			return (0);
 		len = ft_strlen(nbr);
 		write(1, nbr, len);
 		free(nbr);

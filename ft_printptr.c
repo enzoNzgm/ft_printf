@@ -6,7 +6,7 @@
 /*   By: enzuguem <enzuguem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:23:05 by enzuguem          #+#    #+#             */
-/*   Updated: 2024/11/22 15:18:09 by enzuguem         ###   ########.fr       */
+/*   Updated: 2024/11/26 11:13:02 by enzuguem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ static int	ft_printptr_len(unsigned long long ptr)
 {
 	int	len;
 
-	len = 0;
 	if (ptr == 0)
-		return (3);
+		return (5);
+	len = 0;
 	while (ptr)
 	{
 		ptr /= 16;
@@ -35,16 +35,16 @@ int	ft_printptr(unsigned long long ptr)
 	char	*str;
 	int		len;
 
+	if (ptr == 0)
+		return (write(1, "(nil)", 5));
 	base = "0123456789abcdef";
 	len = ft_printptr_len(ptr);
-	str = (char *)malloc(sizeof(char) * len + 1);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
 	str[0] = '0';
 	str[1] = 'x';
 	str[len] = '\0';
-	if (ptr == 0)
-		str[2] = '0';
 	while (ptr)
 	{
 		str[--len] = base[ptr % 16];
